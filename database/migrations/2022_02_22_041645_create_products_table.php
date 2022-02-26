@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('product_name',200);
             $table->bigInteger('product_price');
             $table->timestamps();
+            
         });
     }
 

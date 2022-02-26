@@ -13,9 +13,8 @@ class AddCategoryidColumn extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('medicines', function (Blueprint $table){
             $table->unsignedBigInteger('category_id');
-         
             $table->foreign('category_id')->references('id')->on('categories');
         });
     }
@@ -27,10 +26,9 @@ class AddCategoryidColumn extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table){
             $table->dropForeign(['category_id']);
             $table->dropColumn('category_id');
-            
         });
     }
 }
